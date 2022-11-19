@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -19,7 +20,7 @@ public class CommittableFileLogTest extends TestCase {
     }
     
     public void testRead() throws Exception {
-        File tempFile = File.createTempFile("mobydick", ".txt"); 
+        File tempFile = Files.createTempFile("mobydick", ".txt").toFile(); 
         
         InputStream is = getClass().getResourceAsStream("mobydick.txt");
         assertNotNull(is);
